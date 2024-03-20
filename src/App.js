@@ -1,10 +1,10 @@
-import DeleteSharpIcon from '@mui/icons-material/DeleteSharp';
+import Login from "./components/Login";
 
 
 function App() {
   return (
     <div className="App">
-    <DeleteSharpIcon/>
+ <Login/>
   
     </div>
   );
