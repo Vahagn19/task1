@@ -2,6 +2,7 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Sidebar from "./components/Sidebar";
 import Profile from "./components/Profile";
+import WorkLogs from "./components/WorkLogs";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
  {/* <Login/> */}
   {/* <Dashboard/> */}
   {/* <Sidebar/> */}
-  <Profile/>
+  {/* <Profile/> */}
+  <WorkLogs/>
     </div>
   );
 }
