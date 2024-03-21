@@ -12,6 +12,7 @@ import styles from './Login.module.css'
                 <img src={image1} alt="human"/>
             </div>
             <RegisterForm/>
+            <p>&copy;2024 Playground: All rights reversed</p>
         </div>
     )
 }

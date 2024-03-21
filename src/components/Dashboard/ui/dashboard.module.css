@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: center;
+  color: #003367;
+
+}
+
+.editBtn {
+  width: Hug (305px) px;
+  height: Hug (36px) px;
+  padding: 9px 16px 9px 16px;
+  gap: 10px;
+  border-radius: 4px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.logoutBtn {
+  width: Hug (92px) px;
+  height: Hug (36px) px;
+  padding: 9px 16px 9px 16px;
+  gap: 10px;
+  border-radius: 4px 0px 0px 0px;
+  opacity: 0px;
+}

@@ -1,0 +1,35 @@
+.container {
+position: relative;
+top: 388px;
+left: 115px;
+}
+
+
+.loginForm {
+  width: 370px;
+}
+
+.headline {
+  width: 100%;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #003367;
+}
+
+.login {
+  height: 115px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: end;
+}
+
+.login div {
+  width: 100%;
+}
+
+.button {
+  width: 160px;
+}
