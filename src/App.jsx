@@ -1,18 +1,28 @@
-import Dashboard from "./components/Dashboard";
-import Login from "./components/Login";
-import Sidebar from "./components/Sidebar";
-import Profile from "./components/Profile";
-import WorkLogs from "./components/WorkLogs";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import DashboardPage from "./pages/DashboardPage";
+import LoginPage from "./pages/LoginPage";
+import ProfilePage from "./pages/ProfilePage";
+import test from "./services/test";
+import { useEffect } from "react";
+
+
 
 function App() {
+
+useEffect(()=>{
+  test()
+},[])
+
   return (
-    <div className="App">
- {/* <Login/> */}
-  {/* <Dashboard/> */}
-  {/* <Sidebar/> */}
-  {/* <Profile/> */}
-  <WorkLogs/>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="profile" element={<ProfilePage />} />
+          <Route path="dashboard" element={<DashboardPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

@@ -7,15 +7,15 @@ function Dashboard() {
     <div className={styles.container}>
       <img src={image2} className={styles.image} alt="human1"/>
 
-      <Typography variant="h2" className={styles.headline}>
+      <Typography mt={3} variant="h2" className={styles.headline}>
         COMING SOON
       </Typography>
 
-      <Button style={{ background: "#003367" }} variant="contained" className={styles.editBtn}>
+      <Button sx={{mt:"24px",background:"#003367" }} variant="contained" className={styles.editBtn}>
         EDIT MY PROFILE AND MY WORKLOG
       </Button>
 
-      <Button className={styles.logoutBtn}> LOGOUT</Button>
+      <Button sx={{mt:"24px"}} className={styles.logoutBtn}> LOGOUT</Button>
     </div>
   );
 }

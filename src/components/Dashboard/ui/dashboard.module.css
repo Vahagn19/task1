@@ -3,7 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
+
+
 
 .headline {
   font-size: 40px;
@@ -11,7 +14,6 @@
   line-height: 32px;
   text-align: center;
   color: #003367;
-
 }
 
 .editBtn {
