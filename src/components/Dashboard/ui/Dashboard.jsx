@@ -1,5 +1,5 @@
 import styles from "./dashboard.module.css";
-import image2 from "../../../photo/image2.png";
+import image2 from '../../../assets/image2.png'
 import { Typography, Button } from "@mui/material";
 
 function Dashboard() {

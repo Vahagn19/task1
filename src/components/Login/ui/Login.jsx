@@ -1,4 +1,4 @@
-import image1 from "../../../photo/image1.png";
+import image1 from '../../../assets/image1.png'
 import RegisterForm from "../../RegisterForm";
 import styles from "./Login.module.css";
 import { Typography, Box } from "@mui/material";
