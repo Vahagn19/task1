@@ -23,4 +23,3 @@ function RegisterForm() {
 export default RegisterForm;
 
 
-// style={{ background: "#003367" }} variant="contained"

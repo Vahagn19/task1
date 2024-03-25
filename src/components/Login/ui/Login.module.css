@@ -1,9 +1,18 @@
 .container {
+  margin: 0 auto;
   display: flex;
-  width: 1600px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .imgContainer {
-  width: 800px;
-  height: 900px;
+  width: 50vw;
+  height: auto;
+}
+
+
+.copy {
+  position: absolute;
+  bottom: 35px;
 }

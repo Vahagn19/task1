@@ -1,18 +1,24 @@
 .container {
-position: relative;
-top: 388px;
-left: 115px;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 
 .loginForm {
   width: 370px;
+  position: relative;
+  right: 50px;
 }
 
+
+
 .headline {
-  width: 100%;
+  max-width: 100%;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 2rem;
   line-height: 32px;
   color: #003367;
 }

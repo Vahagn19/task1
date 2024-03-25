@@ -2,16 +2,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DashboardPage from "./pages/DashboardPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
-import test from "./services/test";
-import { useEffect } from "react";
+
 
 
 
 function App() {
 
-useEffect(()=>{
-  test()
-},[])
+
 
   return (
     <BrowserRouter>
