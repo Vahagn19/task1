@@ -10,14 +10,14 @@ function WorkLogs() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <SingleInputTimeRangeField
-      variant="outlined"
+        variant="outlined"
         label="Controlled field"
         value={value}
         onChange={(newvalue) => setValue(newvalue)}
       />
-      <SingleInputTimeRangeField 
-      variant="outlined"
-      label="From - To" />
+      <SingleInputTimeRangeField
+        variant="outlined"
+        label="From - To" />
     </LocalizationProvider>
   );
 }
