@@ -1,4 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-left: 60px;
+  box-sizing: border-box;
+}
+
+.container h6 {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.gridInfo {
+  padding-left: 24px;
+}
 .gridContainer {
-width: 1480px;
-height: 285px;
+  border: 1px solid #dad6d6;
+  padding: 20px;
+  display: flex;
 }

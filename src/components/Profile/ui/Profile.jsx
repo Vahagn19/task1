@@ -1,7 +1,8 @@
-import { TextField } from "@mui/material";
-import { Grid } from "@mui/material/";
+import { TextField, Typography, Grid, Divider } from "@mui/material";
+
 import styles from "./profile.module.css";
 import WorkLogs from "../../WorkLogs/ui/WorkLogs";
+import SocialMediaLinks from "../../SocialMediaLinks";
 
 function Profile() {
   const data = [
@@ -16,26 +17,45 @@ function Profile() {
   ];
 
   return (
-    <div className={styles.gridContainer}>
-      <Grid container spacing={3}>
-        {data.map((item) => {
-          return (
-            <Grid item xs={4} md={item.md} key={item.id}>
-              <TextField
-                fullWidth
-                id="standard-read-only-input"
-                label={item.label}
-                defaultValue={item.value}
-                InputProps={{
-                  readOnly: true,
-                  style: { borderColor: "transparent" },
-                }}
-                variant="standard"
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
+    <div className={styles.container}>
+      <Typography variant="h6"> My Profile</Typography>
+
+      <div className={styles.gridContainer}>
+        <div>
+          <Typography variant="h6" className={styles.gridInfo}>
+            {" "}
+            Genereal Info
+          </Typography>
+          <Grid
+            container
+            spacing={3}
+            className={styles.girdItems}
+            sx={{ ml: "0" }}
+          >
+            {data.map((item) => {
+              return (
+                <Grid item xs={4} md={item.md} key={item.id}>
+                  <TextField
+                    fullWidth
+                    id="standard-read-only-input"
+                    label={item.label}
+                    defaultValue={item.value}
+                    InputProps={{
+                      readOnly: true,
+                      style: { borderColor: "transparent" },
+                    }}
+                    variant="standard"
+                  />
+                </Grid>
+              );
+            })}
+          </Grid>
+        </div>
+        <Divider orientation="vertical" variant="middle" flexItem />
+
+        <SocialMediaLinks />
+      </div>
+
       <WorkLogs />
     </div>
   );
