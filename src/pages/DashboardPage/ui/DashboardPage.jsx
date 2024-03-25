@@ -4,10 +4,13 @@ import styles from './dashboardPage.module.css'
 
 
 function DashboardPage() {
+
+
   return (
     <div className={styles.container}>
       <Sidebar />
       <Dashboard />
+   
     </div>
   );
 }

@@ -6,6 +6,7 @@ import ProfilePage from "./pages/ProfilePage";
 
 
 
+
 function App() {
 
 
@@ -20,7 +21,10 @@ function App() {
         </Routes>
       </div>
     </BrowserRouter>
-  );
+ 
+
+  
+  )
 }
 
 export default App;

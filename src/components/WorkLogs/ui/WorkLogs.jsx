@@ -1,7 +1,6 @@
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { SingleInputTimeRangeField } from "@mui/x-date-pickers-pro";
-import styles from "./workLogs.module.css";
 import { useState } from "react";
 
 function WorkLogs() {

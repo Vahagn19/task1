@@ -3,10 +3,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import PermContactCalendarIcon from "@mui/icons-material/PermContactCalendar";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import styles from './sidebar.module.css'
+import { useLocation } from "react-router-dom";
+
+
 
 function Sidebar() {
+
+
+  const {pathname} = useLocation();
+console.log(pathname);
   return (
     <AppBar
       sx={{
