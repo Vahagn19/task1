@@ -6,9 +6,10 @@ import { GitHub } from "@mui/icons-material";
 function SocialMediaLinks() {
   return (
     <div className={styles.container}>
-      <Typography> My Accounts</Typography>
+      <Typography className={styles.header} > My Accounts</Typography>
       <div className={styles.linkContainer}>
         <TextField
+        fullWidth
           id="standard-read-only-input"
           label="Github"
           defaultValue="Enter Your Github username"
@@ -24,6 +25,7 @@ function SocialMediaLinks() {
         />
 
         <TextField
+        fullWidth
           id="standard-read-only-input"
           label="Slack"
           defaultValue="Enter your Slack username"

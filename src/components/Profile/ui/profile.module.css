@@ -1,22 +1,26 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
   margin-left: 60px;
   box-sizing: border-box;
 }
 
-.container h6 {
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-
-.gridInfo {
-  padding-left: 24px;
-}
-.gridContainer {
+.infoContainer {
   border: 1px solid #dad6d6;
   padding: 20px;
   display: flex;
+  height: 285px;
+}
+
+.gridContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.gridInfo {
+  height: 30%;
+}
+.gridItems {
+  height: 70%;
 }

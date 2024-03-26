@@ -1,7 +1,7 @@
-import image1 from '../../../assets/image1.png'
+import image1 from "../../../assets/image1.png";
 import RegisterForm from "../../RegisterForm";
 import styles from "./Login.module.css";
-import { Typography, Box } from "@mui/material";
+import { Typography } from "@mui/material";
 
 function Login() {
   return (
@@ -12,17 +12,17 @@ function Login() {
       <RegisterForm />
 
       <footer className={styles.copy}>
-        <Typography variant="body1" component="p">
-          <Box
-            sx={{
-              fontSize: "12px",
-              fontWeight: "400",
-              lineHeight: "15px",
-              textAlign: "center",
-            }}
-          >
-            &copy; {new Date().getFullYear()} Playground: All rights reversed
-          </Box>
+        <Typography
+          variant="body1"
+          component="p"
+          sx={{
+            fontSize: "12px",
+            fontWeight: "400",
+            lineHeight: "15px",
+            textAlign: "center",
+          }}
+        >
+          &copy; {new Date().getFullYear()} Playground: All rights reversed
         </Typography>
       </footer>
     </div>

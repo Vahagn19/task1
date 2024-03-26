@@ -5,13 +5,9 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-
-
 function Sidebar() {
+  const { pathname } = useLocation();
 
-
-  const {pathname} = useLocation();
-console.log(pathname);
   return (
     <AppBar
       sx={{
@@ -31,14 +27,16 @@ console.log(pathname);
       </IconButton>
 
       <List>
-        <ListItem sx={{ justifyContent: "center" }} >
-          <Link to="/profile" >
-            <PermContactCalendarIcon sx={{ color: "#ffffff" }} />
+        <ListItem sx={{ justifyContent: "center" }}>
+          <Link to="/profile">
+            <PermContactCalendarIcon sx={{ color: pathname === "/profile" ? "#ffffff" : "#87898b" }} />
           </Link>
         </ListItem>
         <ListItem sx={{ justifyContent: "center" }}>
           <Link to="/dashboard">
-            <DashboardIcon sx={{ color: "#ffffff" }} />
+            <DashboardIcon
+              sx={{ color: pathname === "/dashboard" ? "#ffffff" : "#87898b" }}
+            />
           </Link>
         </ListItem>
       </List>

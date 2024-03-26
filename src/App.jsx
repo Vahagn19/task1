@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DashboardPage from "./pages/DashboardPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
-
+import { Tester } from "./components/Tester/Tester";
 
 
 
@@ -23,7 +23,7 @@ function App() {
     </BrowserRouter>
  
 
-  
+  // <Tester/>
   )
 }
 
