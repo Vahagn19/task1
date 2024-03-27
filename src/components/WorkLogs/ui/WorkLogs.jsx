@@ -1,7 +1,7 @@
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { SingleInputTimeRangeField } from "@mui/x-date-pickers-pro";
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Divider, Grid, Typography } from "@mui/material";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
 import { useState } from "react";
@@ -25,17 +25,19 @@ function WorkLogs() {
   console.log(schedule);
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <div>
-        <Typography>Work Logs </Typography>
+      <div className={styles.container}>
+        <Typography className={styles.gridInfo}>Work Logs </Typography>
         <Grid container spacing={2}>
           {schedule.map(({ key, value, id }) => {
             return (
               <Grid item xs={2} key={id}>
-                <Typography> {key}</Typography>
+                <Typography sx={{ margin: "8px" }}> {key}</Typography>
+                <Divider />
                 {value.map((values, index) => {
                   return (
                     <div className={styles.timeInput} key={index}>
                       <SingleInputTimeRangeField
+                        sx={{ width: "100%" }}
                         ampm={false}
                         variant="standard"
                         label="From-To"
@@ -56,7 +58,8 @@ function WorkLogs() {
                 <Button
                   onClick={() => {
                     dispatch(addTimeField({ key }));
-                  }}>
+                  }}
+                >
                   Plus Field
                 </Button>
               </Grid>

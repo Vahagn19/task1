@@ -20,7 +20,7 @@ function Profile() {
     <div className={styles.container}>
       <Typography variant="h6">My Profile</Typography>
 
-      {/* <div className={styles.infoContainer}>
+      <div className={styles.infoContainer}>
         <div className={styles.gridContainer}>
           <Typography className={styles.gridInfo}>General Info</Typography>
           <Grid container spacing={3} className={styles.gridItems}>
@@ -45,7 +45,7 @@ function Profile() {
         </div>
         <Divider orientation="vertical" variant="middle" flexItem />
         <SocialMediaLinks />
-      </div> */}
+      </div>
 
       <WorkLogs />
     </div>

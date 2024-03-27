@@ -1,11 +1,25 @@
+.container {
+  border: 1px solid #dad6d6;
+  display: flex;
+  height: 285px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+}
+
+.gridInfo {
+  height: 20%;
+}
+
 .timeInput {
   display: block;
 }
 
 .iconGroup {
   position: relative;
-  right: -140px;
+  right: -165px;
   top: -30px;
+  max-width: 90px;
 }
 
 .iconGroup button {
