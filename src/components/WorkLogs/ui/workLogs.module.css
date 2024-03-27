@@ -3,18 +3,12 @@
 }
 
 .iconGroup {
-
   position: relative;
   right: -140px;
   top: -30px;
 }
 
 .iconGroup button {
-   margin: 0;
-   padding: 0;
-}
-
-.iconGroup button svg {
-    margin: 0;
-    padding: 0;
+  min-width: 30px;
+  padding: 0;
 }
