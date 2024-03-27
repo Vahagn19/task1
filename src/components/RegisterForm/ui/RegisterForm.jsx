@@ -7,8 +7,10 @@ import {
 import { auth } from "../../../firebase/firebaseConfig";
 
 function RegisterForm() {
+
   const email = "test@gmail.com";
   const password = "111111";
+
 
   const handleSignUp = async () => {
     try {
@@ -18,6 +20,7 @@ function RegisterForm() {
     }
     console.log("register succesfull");
   };
+
 
   const handleSignIn = async () => {
     try {

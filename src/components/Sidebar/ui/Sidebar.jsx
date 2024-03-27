@@ -14,15 +14,13 @@ function Sidebar() {
         width: "64px",
         height: "900px",
         position: "relative",
-      }}
-    >
+      }}>
       <IconButton
         size="medium"
         edge="end"
         color="inherit"
         aria-label="menu"
-        sx={{ mr: 0 }}
-      >
+        sx={{ mr: 0 }}>
         <MenuIcon />
       </IconButton>
 

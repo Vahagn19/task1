@@ -22,7 +22,7 @@ function WorkLogs() {
     setNewTime(null);
   };
 
-  console.log(schedule);
+  console.log(newTime);
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div className={styles.container}>
@@ -60,7 +60,7 @@ function WorkLogs() {
                     dispatch(addTimeField({ key }));
                   }}
                 >
-                  Plus Field
+                 Gumarum
                 </Button>
               </Grid>
             );
