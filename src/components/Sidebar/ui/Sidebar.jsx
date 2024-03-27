@@ -27,7 +27,7 @@ function Sidebar() {
       <List>
         <ListItem sx={{ justifyContent: "center" }}>
           <Link to="/profile">
-            <PermContactCalendarIcon sx={{ color: pathname === "/profile" ? "#ffffff" : "#87898b" }} />
+            <PermContactCalendarIcon sx={{ color: pathname === "/profile/" ? "#ffffff" : "#87898b" }} />
           </Link>
         </ListItem>
         <ListItem sx={{ justifyContent: "center" }}>

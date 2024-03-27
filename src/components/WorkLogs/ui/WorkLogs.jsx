@@ -5,11 +5,15 @@ import { Button, Divider, Grid, Typography } from "@mui/material";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
 import { useState } from "react";
-import styles from "./workLogs.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setValue, addTimeField } from "../../../redux/slices/scheduleSlice";
+import styles from "./workLogs.module.css";
+
 
 function WorkLogs() {
+
+
+
   const [newTime, setNewTime] = useState(null);
 
   const dispatch = useDispatch();
@@ -17,12 +21,17 @@ function WorkLogs() {
     return state.schedule;
   });
 
+
+
   const handleAddTime = (key) => {
+
     dispatch(setValue({ newTime, key }));
     setNewTime(null);
-  };
 
+  };
   console.log(newTime);
+
+
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div className={styles.container}>
@@ -45,10 +54,10 @@ function WorkLogs() {
                         onChange={(newValue) => setNewTime(newValue)}
                       />
                       <div className={styles.iconGroup}>
-                        <Button onClick={() => handleAddTime(key)}>
+                        <Button>
                           <ClearOutlinedIcon color="disabled" />
                         </Button>
-                        <Button>
+                        <Button onClick={() => handleAddTime(key)}>
                           <AccessTimeOutlinedIcon color="disabled" />
                         </Button>
                       </div>
@@ -60,7 +69,7 @@ function WorkLogs() {
                     dispatch(addTimeField({ key }));
                   }}
                 >
-                 Gumarum
+                  Gumarum
                 </Button>
               </Grid>
             );
