@@ -1,4 +1,6 @@
-import { createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+
+
 
 const initialState = [
   { key: "Sunday", value: [{ id: 1, data: [] }], id: 1 },
@@ -15,14 +17,12 @@ const scheduleSlice = createSlice({
   reducers: {
     updateTimeField: (state, action) => {
       const { newTime, dayKey, id } = action.payload;
-console.log(id);
-      state = state.map((item) => {
    
+      console.log(newTime);
+      state = state.map((item) => {
         if (item.key === dayKey) {
-       
           const updateId = item.value.findIndex((el) => el.id === id);
           item.value[updateId].data = [...newTime];
-         
         }
         return item;
       });
@@ -37,6 +37,7 @@ console.log(id);
           const id = length ? item.value[length - 1].id + 1 : 1;
           item.value = [...item.value, { id, data: [] }];
         }
+        return item
       });
     },
 

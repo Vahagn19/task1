@@ -11,22 +11,18 @@ import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
 import DoneIcon from "@mui/icons-material/Done";
 import { Button } from "@mui/material";
 
-function TimeField({ id, time, dayKey }) {
+function TimeField({ id, data, dayKey }) {
   const [newTime, setNewTime] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const dispatch = useDispatch();
-;
-  const handleAddTime = (dayKey, id) => {
-    if (!disabled) {
-
+  const handleUpdateTime = (dayKey, id) => {
+    if (!disabled && newTime) {
       dispatch(updateTimeField({ newTime, dayKey, id }));
       setDisabled(!disabled);
       setNewTime(null);
     } else {
-        setDisabled(!disabled);
+      setDisabled(!disabled);
     }
-
-   
   };
 
   return (
@@ -37,7 +33,7 @@ function TimeField({ id, time, dayKey }) {
         ampm={false}
         variant="standard"
         label="From-To"
-        value={time}
+        value={data}
         onChange={(newValue) => setNewTime(newValue)}
       />
       <div className={styles.iconGroup}>
@@ -48,7 +44,11 @@ function TimeField({ id, time, dayKey }) {
         >
           <ClearOutlinedIcon color="disabled" />
         </Button>
-        <Button onClick={handleAddTime}>
+        <Button
+          onClick={() => {
+            handleUpdateTime(dayKey, id);
+          }}
+        >
           {disabled ? (
             <AccessTimeOutlinedIcon color="disabled" />
           ) : (
