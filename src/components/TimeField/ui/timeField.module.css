@@ -1,0 +1,16 @@
+.timeInput {
+    display: block;
+  }
+
+  .iconGroup {
+    position: relative;
+    right: -135px;
+    top: -30px;
+    max-width: 90px;
+  }
+  
+  .iconGroup button {
+    min-width: 30px;
+    padding: 0;
+  }
+  
