@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 
 function Sidebar() {
   const { pathname } = useLocation();
-
+console.log(pathname);
   return (
     <AppBar
       sx={{
@@ -27,7 +27,7 @@ function Sidebar() {
       <List>
         <ListItem sx={{ justifyContent: "center" }}>
           <Link to="/profile">
-            <PermContactCalendarIcon sx={{ color: pathname === "/profile/" ? "#ffffff" : "#87898b" }} />
+            <PermContactCalendarIcon sx={{ color: pathname === "/profile" ? "#ffffff" : "#87898b" }} />
           </Link>
         </ListItem>
         <ListItem sx={{ justifyContent: "center" }}>

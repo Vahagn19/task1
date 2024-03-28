@@ -17,7 +17,7 @@ const scheduleSlice = createSlice({
   reducers: {
     updateTimeField: (state, action) => {
       const { newTime, dayKey, id } = action.payload;
-   
+
       console.log(newTime);
       state = state.map((item) => {
         if (item.key === dayKey) {
