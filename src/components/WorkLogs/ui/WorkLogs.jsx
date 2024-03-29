@@ -3,6 +3,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { Button, Divider, Grid, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { addTimeField } from "../../../redux/slices/scheduleSlice";
+import AddIcon from "@mui/icons-material/Add";
 import styles from "./workLogs.module.css";
 import TimeField from "../../TimeField";
 
@@ -11,7 +12,7 @@ function WorkLogs() {
   const schedule = useSelector((state) => {
     return state.schedule;
   });
-  console.log(schedule);
+
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div className={styles.container}>
@@ -28,12 +29,13 @@ function WorkLogs() {
                   );
                 })}
                 <Button
+                  className={styles.addBtn}
+                  sx={{ background: "#EBEEEF", width: "100%" }}
                   onClick={() => {
                     dispatch(addTimeField({ key }));
                   }}
                 >
-                  {" "}
-                  Gumarum
+                  <AddIcon color="disabled" />
                 </Button>
               </Grid>
             );

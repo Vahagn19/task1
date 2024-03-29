@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 
 function Sidebar() {
   const { pathname } = useLocation();
-console.log(pathname);
+
   return (
     <AppBar
       sx={{
