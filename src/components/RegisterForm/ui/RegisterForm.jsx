@@ -1,35 +1,64 @@
-import React, { useEffect } from "react";
+
 import styles from "./registerForm.module.css";
 import { TextField, Button, Alert } from "@mui/material";
 import OtpInput from "react-otp-input";
 import { useState } from "react";
 
 import { validateEmail, validatePassword } from "../../../utils/validate";
-import { handleLogin } from "../../Test.jsx/Test";
+import { handleLogin, getUserDetails } from "../../Test.jsx/Test";
+
+
 
 function RegisterForm() {
+
+
+
   const [alert, setalert] = useState(false);
   const [switcher, setSwitcher] = useState(true);
+
   const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = () => {
+
+  const handleSubmit = async () => {
     if (!validateEmail(userEmail) && switcher) {
       setalert(true);
       setUserEmail("");
       return;
     }
+
     setalert(false);
     setSwitcher(false);
     if (!validatePassword(password) && !switcher) {
       setalert(true);
       setPassword("");
       return
-    } 
-}
-// useEffect(()=>{
-//   handleLogin()
-// },[])
+    }
+
+    if (password === "123456") {
+      const result = await handleLogin(userEmail, password)
+      console.log(result);
+    }
+
+  }
+
+
+
+
+
+  const getUser = async () => {
+    try {
+      const response = await getUserDetails();
+
+    } catch (error) {
+      console.log(error.message, "user error");
+    }
+  };
+
+
+
+
+
 
   return (
     <div className={styles.container}>
@@ -41,12 +70,15 @@ function RegisterForm() {
           </Alert>
         ) : null}
 
+
+
         <div className={styles.login}>
           {switcher ? (
             <TextField
               id="outlined-number"
               label="Enter your email"
               variant="standard"
+              type="email"
               value={userEmail}
               onChange={(e) => setUserEmail(e.target.value)}
             />
@@ -57,7 +89,7 @@ function RegisterForm() {
               numInputs={6}
               containerStyle={{ width: "100%" }}
               inputStyle={styles.input}
-              renderInput={(props) => <input {...props} />}
+              renderInput={(props) => <input  {...props} />}
             />
           )}
 
@@ -67,9 +99,9 @@ function RegisterForm() {
             variant="contained"
             onClick={handleSubmit}
           >
+
             {switcher ? "Send Code" : "Submit"}
           </Button>
-  
         </div>
       </div>
     </div>

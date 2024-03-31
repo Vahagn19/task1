@@ -44,6 +44,12 @@ function TimeField({ id, data, dayKey }) {
     };
   }, [disabled]);
 
+
+const handleTest = (ex)=>{
+console.log(ex);
+setNewTime(ex)
+}
+
   return (
     <div ref={btnRef} className={styles.timeInput} key={id}>
       <SingleInputTimeRangeField
@@ -53,7 +59,7 @@ function TimeField({ id, data, dayKey }) {
         variant="standard"
         label="From-To"
         value={data}
-        onChange={(newValue) => setNewTime(newValue)}
+        onChange={(newValue) => handleTest(newValue)}
       />
       <div className={styles.iconGroup}>
         <Button

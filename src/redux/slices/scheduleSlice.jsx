@@ -10,7 +10,7 @@ const initialState = [
   { key: "Thursday", value: [{ id: 1, data: [] }], id: 5 },
   { key: "Friday", value: [{ id: 1, data: [] }], id: 6 },
 ];
-
+  
 const scheduleSlice = createSlice({
   name: "schedule",
   initialState,
