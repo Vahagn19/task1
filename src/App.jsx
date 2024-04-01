@@ -1,7 +1,12 @@
-import { Route, Routes } from "react-router-dom";
-import DashboardPage from "./pages/DashboardPage";
-import LoginPage from "./pages/LoginPage";
-import ProfilePage from "./pages/ProfilePage";
+import { Suspense, lazy } from "react";
+import { Route, Routes, } from "react-router-dom";
+import Loading from "./components/Loading";
+
+
+
+const UserLoginPage = lazy(() => import("./pages/LoginPage"));
+const UserProfilePage = lazy(() => import("./pages/ProfilePage"));
+const UserDashboardPage = lazy(() => import("./pages/DashboardPage"));
 
 
 function App() {
@@ -12,11 +17,13 @@ function App() {
   return (
 
     <div className="App">
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="profile" element={<ProfilePage />} />
-        <Route path="dashboard" element={<DashboardPage />} />
-      </Routes>
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          <Route path="/" element={<UserLoginPage />} />
+          <Route path="profile" element={<UserProfilePage />} />
+          <Route path="dashboard" element={<UserDashboardPage />} />
+        </Routes>
+      </Suspense>
     </div>
 
   );
