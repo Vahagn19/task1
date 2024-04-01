@@ -1,6 +1,7 @@
 
 import axios from "axios"
-const axiosApiInstance = axios.create({
+
+export  const axiosApiInstance = axios.create({
   baseURL: "http://localhost:3333/auth"
 }
 )
@@ -40,38 +41,6 @@ axiosApiInstance.interceptors.response.use(
 );
 
 
-export const handleLogin = async (email,password) => {
-  try {
-    const response = await axiosApiInstance.post("/login", {
-      email,
-      password
-    });
-    localStorage.setItem("accessToken", response.data.token)
-    localStorage.setItem("refreshToken", response.data.refreshToken)
-    
-    return response.data
-  } catch (error) {
-    throw Error(error, "login error")
-  }
-};
-
-
-
-
-
-export const getUserDetails = async () => {
-  try {
-    const accesToken = localStorage.getItem("accessToken")
-    const userData = await axiosApiInstance.post("/me", null, {
-      headers: {
-        Authorization: `Bearer ${accesToken}`
-      }
-    })
-    return userData.data.email
-  } catch (error) {
-    throw new Error("Cannot get user info");
-  }
-}
 
 
 async function refreshAccessToken() {
@@ -93,7 +62,7 @@ async function refreshAccessToken() {
   } catch (err) {
     localStorage.removeItem("accessToken")
     localStorage.removeItem("refreshToken")
-    //location reload or something like that 
+    window.location.href = "/"; 
     throw Error(err, "refresh error")
   }
 }

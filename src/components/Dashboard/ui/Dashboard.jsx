@@ -2,11 +2,20 @@ import styles from "./dashboard.module.css";
 import image2 from '../../../assets/image2.png'
 import { Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../../redux/store/store";
+import { useEffect } from "react";
+import { getUserDetails } from "../../../redux/slices/userSlice";
 
 function Dashboard() {
 
 
 const navigate = useNavigate()
+const dispatch = useAppDispatch()
+
+
+useEffect(()=>{
+  dispatch(getUserDetails())
+},[dispatch])
 
 
   const logout = ()=>{
