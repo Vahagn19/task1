@@ -3,22 +3,29 @@ import styles from "./registerForm.module.css";
 import { TextField, Button, Alert } from "@mui/material";
 import OtpInput from "react-otp-input";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import { validateEmail, validatePassword } from "../../../utils/validate";
-import { handleLogin, getUserDetails } from "../../Test.jsx/Test";
+import { handleLogin} from "../../../services/apiService";
+import {  useDispatch, useSelector } from "react-redux";
 
 
 
 function RegisterForm() {
 
 
-
+const user = useSelector((state)=>{
+  return state.user
+})
   const [alert, setalert] = useState(false);
   const [switcher, setSwitcher] = useState(true);
 
   const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+console.log(user);
 
   const handleSubmit = async () => {
     if (!validateEmail(userEmail) && switcher) {
@@ -36,31 +43,21 @@ function RegisterForm() {
     }
 
     if (password === "123456") {
-      const result = await handleLogin(userEmail, password)
-      console.log(result);
-    }
+      try{
+         await dispatch(handleLogin(userEmail,password)) 
+        navigate("/dashboard")
+        console.log(user);
+      }catch(error){
+        console.log(error.message)
+        return
+      }
+   }
 
   }
 
 
 
-
-
-  const getUser = async () => {
-    try {
-      const response = await getUserDetails();
-
-    } catch (error) {
-      console.log(error.message, "user error");
-    }
-  };
-
-
-
-
-
-
-  return (
+return (
     <div className={styles.container}>
       <div className={styles.loginForm}>
         <h2 className={styles.headline}>Login</h2>
@@ -102,6 +99,7 @@ function RegisterForm() {
 
             {switcher ? "Send Code" : "Submit"}
           </Button>
+        
         </div>
       </div>
     </div>
