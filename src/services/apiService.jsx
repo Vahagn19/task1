@@ -1,11 +1,10 @@
 
 import axios from "axios"
 
-export  const axiosApiInstance = axios.create({
+export const axiosApiInstance = axios.create({
   baseURL: "http://localhost:3333/auth"
 }
 )
-
 
 
 axiosApiInstance.interceptors.request.use(
@@ -42,14 +41,11 @@ axiosApiInstance.interceptors.response.use(
 
 
 
-
 async function refreshAccessToken() {
   try {
     const refreshToken = localStorage.getItem("refreshToken")
     const response = await axios.post('/refresh', {
-
       refreshToken: `Bearer ${refreshToken}`
-
     })
     const newAccessToken = response.data.token
     const newRefreshToken = response.data.refreshToken
@@ -62,7 +58,7 @@ async function refreshAccessToken() {
   } catch (err) {
     localStorage.removeItem("accessToken")
     localStorage.removeItem("refreshToken")
-    window.location.href = "/"; 
+    window.location.href = "/";
     throw Error(err, "refresh error")
   }
 }
