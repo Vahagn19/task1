@@ -11,6 +11,9 @@ export function validatePassword(password) {
     if (isNaN(key)) {
       return false;
     }
+    if(password!=="123456"){
+      return false
+    }
   }
   return true;
 }

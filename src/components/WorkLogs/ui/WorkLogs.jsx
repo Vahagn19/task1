@@ -21,7 +21,7 @@ function WorkLogs() {
           {schedule.map(({ key, value, id }) => {
             return (
               <Grid item xs={2} key={id}>
-                <Typography sx={{ margin: "8px" }}> {key}</Typography>
+                <Typography sx={{ margin: "8px",color:"#003367" }}> {key}</Typography>
                 <Divider />
                 {value.map(({ id, data }) => {
                   return (

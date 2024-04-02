@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+.container h5 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: #003367;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
 .infoContainer {
   border: 1px solid #dad6d6;
   padding: 20px;
@@ -20,7 +29,12 @@
 
 .gridInfo {
   height: 20%;
+  color: #003367;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
 }
+
 .gridItems {
   height: 70%;
 }

@@ -1,14 +1,26 @@
-.timeInput {
+/* .timeInput {
     display: block;
+  } */
+
+  .timeInput{
+    display: flex;
+    
   }
 
-  .iconGroup {
+  /* .iconGroup {
     position: relative;
     right: -135px;
     top: -30px;
     max-width: 90px;
+  } */
+  .inputForm{
+    flex: 0 0 80%
   }
-  
+  .iconGroup{
+    flex: 0 0 20%;
+    flex-grow: 0;
+    display: flex;
+  }
   .iconGroup button {
     min-width: 30px;
     padding: 0;

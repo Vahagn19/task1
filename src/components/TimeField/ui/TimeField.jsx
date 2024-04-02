@@ -1,14 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./timeField.module.css";
 import { useDispatch } from "react-redux";
-import { updateTimeField, deleteTimeField } from "../../../redux/slices/scheduleSlice";
+import {
+  updateTimeField,
+  deleteTimeField,
+} from "../../../redux/slices/scheduleSlice";
 import { SingleInputTimeRangeField } from "@mui/x-date-pickers-pro";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
 import DoneIcon from "@mui/icons-material/Done";
 import { Button } from "@mui/material";
-
-
 
 function TimeField({ id, data, dayKey }) {
   const [newTime, setNewTime] = useState(null);
@@ -43,24 +44,28 @@ function TimeField({ id, data, dayKey }) {
     };
   }, [disabled]);
 
-
-  const handleTest = (ex) => {
-    console.log(ex);
-    setNewTime(ex)
-  }
+  const handleTest = (updatedTime) => {
+    console.log(updatedTime);
+    setNewTime(updatedTime);
+  };
 
   return (
     <div ref={btnRef} className={styles.timeInput} key={id}>
+      <div className={styles.inputForm}>
       <SingleInputTimeRangeField
         disabled={disabled}
-        sx={{ width: "100%" }}
+        sx={{ width: "100%"}}
         ampm={false}
         variant="standard"
         label="From-To"
         value={data}
         onChange={(newValue) => handleTest(newValue)}
       />
+
+      </div>
+     
       <div className={styles.iconGroup}>
+
         <Button
           onClick={() => {
             dispatch(deleteTimeField({ dayKey, id }));
@@ -68,6 +73,7 @@ function TimeField({ id, data, dayKey }) {
         >
           <ClearOutlinedIcon color="disabled" />
         </Button>
+
         <Button
           onClick={() => {
             handleUpdateTime(dayKey, id);

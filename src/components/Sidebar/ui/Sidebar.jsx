@@ -14,7 +14,8 @@ function Sidebar() {
         width: "64px",
         height: "900px",
         position: "relative",
-      }}>
+        background:"#003367",
+}}>
       <IconButton
         size="medium"
         edge="end"
