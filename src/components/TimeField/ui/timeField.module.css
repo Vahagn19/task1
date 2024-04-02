@@ -1,28 +1,24 @@
-/* .timeInput {
-    display: block;
-  } */
+.timeInput {
+  display: block;
+  position: relative;
+  margin-top: 10px;
+}
+.inputForm {
 
-  .timeInput{
-    display: flex;
-    
-  }
+}
 
-  /* .iconGroup {
-    position: relative;
-    right: -135px;
-    top: -30px;
-    max-width: 90px;
-  } */
-  .inputForm{
-    flex: 0 0 80%
-  }
-  .iconGroup{
-    flex: 0 0 20%;
-    flex-grow: 0;
-    display: flex;
-  }
-  .iconGroup button {
-    min-width: 30px;
-    padding: 0;
-  }
+.iconGroup {
+  /* position: relative;
+  right: -135px;
+  top: -30px; */
+  width: 60px;
+  position: absolute;
+  right: 0;
+  top: 40%;
   
+}
+
+.iconGroup button {
+  min-width: 30px;
+  padding: 0;
+}

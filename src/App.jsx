@@ -1,7 +1,7 @@
 import { Suspense, lazy } from "react";
 import { Route, Routes, } from "react-router-dom";
 import Loading from "./components/Loading";
-
+import NotFound from "./components/NotFound";
 
 
 const UserLoginPage = lazy(() => import("./pages/LoginPage"));
@@ -20,6 +20,7 @@ function App() {
           <Route path="/" element={<UserLoginPage />} />
           <Route path="profile" element={<UserProfilePage />} />
           <Route path="dashboard" element={<UserDashboardPage />} />
+          <Route path="*" element={<NotFound />} />
        </Routes>
       </Suspense>
     </div>

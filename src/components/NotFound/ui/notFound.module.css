@@ -1,0 +1,28 @@
+.container {
+  width: 100%;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+
+}
+.container h1{
+    color: #a19c9c;
+ margin: 0;
+    font-family: "Roboto";
+    font-size: 120px;
+}
+
+.container  h2{
+    color: #a19c9c;
+    margin: 10px;
+    font-family: "Roboto";
+}
+
+.container span {
+    font-size: 30px;
+    font-family: "Roboto";
+ 
+}

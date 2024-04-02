@@ -52,15 +52,15 @@ function TimeField({ id, data, dayKey }) {
   return (
     <div ref={btnRef} className={styles.timeInput} key={id}>
       <div className={styles.inputForm}>
-      <SingleInputTimeRangeField
-        disabled={disabled}
+      <SingleInputTimeRangeField    disabled={disabled}
         sx={{ width: "100%"}}
         ampm={false}
         variant="standard"
         label="From-To"
         value={data}
-        onChange={(newValue) => handleTest(newValue)}
-      />
+        onChange={(newValue) => handleTest(newValue)}>
+     
+        </SingleInputTimeRangeField>
 
       </div>
      

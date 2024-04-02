@@ -6,7 +6,7 @@
   flex-direction: column;
   padding: 32px;
   margin-top: 20px;
-}
+ }
 
 .gridInfo {
   height: 20%;
@@ -16,18 +16,7 @@
   line-height: 32px;
 }
 
-.timeInput {
-  display: block;
-}
 
-.iconGroup {
-  position: relative;
-  right: -135px;
-  top: -30px;
-  max-width: 90px;
-}
-
-.iconGroup button {
-  min-width: 30px;
-  padding: 0;
+.addBtn{
+  margin-top: 15px;
 }
