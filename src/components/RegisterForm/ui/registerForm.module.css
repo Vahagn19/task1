@@ -56,3 +56,28 @@
   margin-bottom: 25px;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+.headline{
+  text-align: center;
+}
+  .loginForm {
+    width: 90%;
+    right: 0;
+  }
+
+  .login {
+    align-items: center;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .input {
+    margin: 0;
+  }
+}

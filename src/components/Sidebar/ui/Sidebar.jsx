@@ -11,8 +11,8 @@ function Sidebar() {
   return (
     <AppBar
       sx={{
-        width: "64px",
-        height: "900px",
+        width: "74px",
+        height: "100vh",
         position: "relative",
         background:"#003367",
 }}>
@@ -21,14 +21,14 @@ function Sidebar() {
         edge="end"
         color="inherit"
         aria-label="menu"
-        sx={{ mr: 0 }}>
+        sx={{ mr: 0,p:2 }}>
         <MenuIcon />
       </IconButton>
 
-      <List>
+      <List sx={{mt:"25px",p:"10px"}}>
         <ListItem sx={{ justifyContent: "center" }}>
-          <Link to="/profile">
-            <PermContactCalendarIcon sx={{ color: pathname === "/profile" ? "#ffffff" : "#87898b" }} />
+          <Link to="/">
+            <PermContactCalendarIcon sx={{ color: pathname === "/" ? "#ffffff" : "#87898b" }} />
           </Link>
         </ListItem>
         <ListItem sx={{ justifyContent: "center" }}>

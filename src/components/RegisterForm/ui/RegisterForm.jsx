@@ -35,7 +35,7 @@ function RegisterForm() {
     if (password === "123456") {
       try {
         await dispatch(handleLogin({ email, password }));
-        navigate("/dashboard");
+        navigate("/");
       } catch (error) {
         console.log(error.message);
         return;

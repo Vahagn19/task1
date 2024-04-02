@@ -6,12 +6,14 @@ import { Typography } from "@mui/material";
 function Login() {
   return (
     <div className={styles.container}>
+
       <div className={styles.imgContainer}>
         <img src={image1} alt="human" />
       </div>
+
       <RegisterForm />
 
-      <footer className={styles.copy}>
+   <footer className={styles.copy}>
         <Typography
           variant="body1"
           component="p"

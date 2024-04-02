@@ -21,7 +21,7 @@ function Dashboard() {
   const logout = () => {
     localStorage.removeItem("accessToken")
     localStorage.removeItem("refreshToken")
-    navigate("/")
+    navigate("/login")
   }
 
 
@@ -37,7 +37,7 @@ function Dashboard() {
       <Button
         sx={{ mt: "24px", background: "#003367" }}
         variant="contained" className={styles.editBtn}
-        onClick={() => navigate("/profile")}>
+        onClick={() => navigate("/")}>
         EDIT MY PROFILE AND MY WORKLOG
       </Button>
 
