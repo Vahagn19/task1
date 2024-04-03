@@ -32,7 +32,7 @@ const scheduleSlice = createSlice({
       const { key } = action.payload;
 
       state = state.map((item) => {
-        if (item.key === key) {
+        if (item.key === key && item.value.length<=2) {
           const length = item.value.length;
           const id = length ? item.value[length - 1].id + 1 : 1;
           item.value = [...item.value, { id, data: [] }];

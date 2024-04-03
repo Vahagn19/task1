@@ -15,7 +15,7 @@ function Dashboard() {
 
   useEffect(() => {
     dispatch(getUserDetails())
-  }, [dispatch])
+   }, [dispatch])
 
 
   const logout = () => {

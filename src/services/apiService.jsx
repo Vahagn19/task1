@@ -29,10 +29,12 @@ axiosApiInstance.interceptors.response.use(
       if (error.response.status === 401 && !originalRequest._retry) {
         originalRequest._retry = true;
         const newAccesToken = await refreshAccessToken();
+        console.log("response interseptor");
         originalRequest.headers.Authorization = `Bearer ${newAccesToken}`;
         return axiosApiInstance(originalRequest);
       }
     } catch (error) {
+      console.log("response token error");
       throw Error(error, "response error")
     }
 
@@ -44,7 +46,7 @@ axiosApiInstance.interceptors.response.use(
 async function refreshAccessToken() {
   try {
     const refreshToken = localStorage.getItem("refreshToken")
-    const response = await axios.post('/refresh', {
+    const response = await axios.post('http://localhost:3333/auth/refresh', {
       refreshToken: `Bearer ${refreshToken}`
     })
     const newAccessToken = response.data.token
@@ -56,9 +58,9 @@ async function refreshAccessToken() {
     return newAccessToken
 
   } catch (err) {
-    localStorage.removeItem("accessToken")
+   localStorage.removeItem("accessToken")
     localStorage.removeItem("refreshToken")
-    window.location.href = "/";
+    window.location.href = "/login";
     throw Error(err, "refresh error")
   }
 }

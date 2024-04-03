@@ -1,8 +1,11 @@
 import { TextField, Typography, Grid, Divider } from "@mui/material";
-
 import styles from "./profile.module.css";
 import WorkLogs from "../../WorkLogs/ui/WorkLogs";
 import SocialMediaLinks from "../../SocialMediaLinks";
+import { useEffect } from "react";
+import { getUserDetails } from "../../../redux/slices/userSlice";
+import { useAppDispatch } from "../../../redux/store/store";
+
 
 const data = [
   { label: "First Name", value: "My Name", id: "1", md: 3 },
@@ -17,6 +20,14 @@ const data = [
 
 function Profile() {
 
+
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+   dispatch(getUserDetails());
+   console.log("err");
+   },[dispatch]);
 
   return (
     <div className={styles.container}>
